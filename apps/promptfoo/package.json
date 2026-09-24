@@ -1,0 +1,19 @@
+{
+  "name": "@tech-demos/promptfoo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Promptfoo eval demo — fixture scorecard UI + optional live OpenAI path",
+  "scripts": {
+    "eval": "bun run scripts/run-eval.ts",
+    "eval:live": "PROMPTFOO_MODE=live bun run scripts/run-eval.ts",
+    "dev": "bun run src/server.ts",
+    "demo": "bun run eval && bun run dev",
+    "check:node": "bun run scripts/check-node.ts"
+  },
+  "dependencies": {
+    "promptfoo": "^0.123.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}

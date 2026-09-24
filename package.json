@@ -1,0 +1,19 @@
+{
+  "name": "tech-demos",
+  "private": true,
+  "description": "Sticky monorepo for public tech demos — one app per pick under apps/<slug>/",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "promptfoo:eval": "bun run --filter @tech-demos/promptfoo eval",
+    "promptfoo:dev": "bun run --filter @tech-demos/promptfoo dev",
+    "promptfoo:demo": "bun run --filter @tech-demos/promptfoo demo"
+  },
+  "engines": {
+    "bun": ">=1.1.0"
+  },
+  "overrides": {
+    "@aws-sdk/client-sagemaker-runtime": "3.699.0"
+  }
+}
