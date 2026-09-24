@@ -35,6 +35,15 @@ bun run demo    # eval (fixture) + scorecard UI on http://localhost:3456/
 
 Eval output is written to `output/latest-results.json`.
 
+## Validation media (in-repo)
+
+PR and review artifacts for this demo live in the repo (durable links):
+
+| Asset | Path |
+| --- | --- |
+| Scorecard screenshot | [docs/validation/promptfoo-scorecard.png](docs/validation/promptfoo-scorecard.png) |
+| Scorecard demo video | [docs/validation/promptfoo-scorecard-demo.mp4](docs/validation/promptfoo-scorecard-demo.mp4) |
+
 ## Sample config
 
 - **RAG-style cases**: refund window, shipping policy (deterministic assertions: `contains`, `icontains`).

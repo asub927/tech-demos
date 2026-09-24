@@ -11,7 +11,7 @@ Demonstrate LLM evaluation and CI-style quality gates with [Promptfoo](https://g
 - Default **fixture mode** (mock RAG provider) — no API keys.
 - Live path uses `OPENAI_API_KEY` + `promptfooconfig.live.yaml` (LLM rubric assertions).
 - Do not rehost Promptfoo Cloud; UI reads local JSON output only.
-- PR must include screenshot + video of the scorecard.
+- PR must include screenshot + video committed under `docs/validation/` (in-repo paths in PR/README).
 
 ## MVP scope
 
@@ -37,7 +37,7 @@ Demonstrate LLM evaluation and CI-style quality gates with [Promptfoo](https://g
 - [ ] UI shows pass rate, per-test assertions, and red-team tags.
 - [ ] `bun run eval:live` documented; fails fast without `OPENAI_API_KEY`.
 - [ ] GitHub Action runs fixture eval without secrets.
-- [ ] PR includes screenshot + video of the scorecard.
+- [ ] PR includes screenshot + video in `docs/validation/` linked from README/PR.
 
 ## File layout
 
@@ -54,6 +54,7 @@ apps/promptfoo/
   src/server.ts
   src/scorecard.ts
   fixtures/sample-results.json
+  docs/validation/        # committed screenshot + video for PRs
   output/                 # gitignored eval output
 .github/workflows/promptfoo-gate.yml
 ```
