@@ -32,6 +32,6 @@ bun run promptfoo:demo
 
 1. Plan with `skills/project-planning/SKILL.md` and add `apps/<slug>/PLAN.md`.
 2. Implement under `apps/<slug>/` only.
-3. Open a PR with **screenshot + video** of the running demo and clear run instructions.
+3. Open a PR with **screenshot + video** committed under `apps/<slug>/docs/validation/` (link those paths in the PR — not cloud-agent artifact URLs) and clear run instructions.
 
 See [AGENTS.md](AGENTS.md) for agent-specific rules.

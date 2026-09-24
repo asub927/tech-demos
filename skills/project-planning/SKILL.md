@@ -10,7 +10,7 @@ Use this skill to turn a demo idea into a shippable MVP under `apps/<slug>/`.
 ## Workflow
 
 1. **Goal** — One sentence: what the demo proves or teaches.
-2. **Constraints** — Bun, monorepo layout, licenses, secrets/fixture vs live, PR artifacts (screenshot + video).
+2. **Constraints** — Bun, monorepo layout, licenses, secrets/fixture vs live, PR validation media committed under `apps/<slug>/docs/validation/` (screenshot + video; in-repo links only, not ephemeral agent artifact URLs).
 3. **MVP scope** — Smallest set of features that satisfy acceptance; explicitly list out-of-scope items.
 4. **Acceptance checks** — Verifiable bullets (commands, UI states, CI behavior).
 5. **File layout** — Tree under `apps/<slug>/` plus any root touchpoints.
@@ -46,3 +46,4 @@ apps/<slug>/
 - Root may hold shared docs, `tracking/seen-bookmarks.json`, and workspace `package.json`.
 - Prefer fixture/demo mode without API keys; document `OPENAI_API_KEY` (or similar) for live runs.
 - Ship with README run instructions and Bun scripts named in the README.
+- Commit PR validation screenshot + video under `apps/<slug>/docs/validation/` and link them from the PR and README (relative paths).
