@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Bun
+.bun/
+bun.lockb
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build / cache
+dist/
+build/
+.cache/
+*.tsbuildinfo
+
+# Promptfoo / eval artifacts (regenerated locally)
+apps/promptfoo/.promptfoo/
+apps/promptfoo/output/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Test / coverage
+coverage/
+
+# Local PR capture (uploaded via cloud agent artifacts)
+artifacts/
+.playwright-mcp/

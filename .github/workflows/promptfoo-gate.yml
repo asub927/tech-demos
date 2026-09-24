@@ -1,0 +1,48 @@
+name: promptfoo fixture gate
+
+on:
+  pull_request:
+    paths:
+      - 'apps/promptfoo/**'
+      - '.github/workflows/promptfoo-gate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'apps/promptfoo/**'
+      - '.github/workflows/promptfoo-gate.yml'
+  workflow_dispatch:
+
+jobs:
+  eval-fixture:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/promptfoo
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22'
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run fixture eval (no API keys)
+        env:
+          PROMPTFOO_DISABLE_TELEMETRY: '1'
+        run: bun run eval
+
+      - name: Gate on failures
+        run: |
+          FAILURES=$(node -e "const j=require('./output/latest-results.json'); process.stdout.write(String(j.results.stats.failures + j.results.stats.errors))")
+          echo "Failures + errors: $FAILURES"
+          if [ "$FAILURES" != "0" ]; then
+            echo "Promptfoo fixture eval failed"
+            exit 1
+          fi
+          echo "All fixture checks passed"
